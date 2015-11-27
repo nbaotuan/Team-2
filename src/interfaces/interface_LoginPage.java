@@ -1,4 +1,4 @@
-package interfacesJoomla;
+package interfaces;
 
 public class interface_LoginPage {
 	public static final String username_textbox = "//input[@name='username']";

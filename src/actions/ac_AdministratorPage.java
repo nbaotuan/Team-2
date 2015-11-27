@@ -1,4 +1,4 @@
-package actionJoomla;
+package actions;
 
 import org.openqa.selenium.WebDriver;
 
@@ -18,7 +18,7 @@ public class ac_AdministratorPage extends common.AutoElements{
 	}
 	
 	public void Logout(){		
-		click(driver, interfacesJoomla.interface_AdminstratorPage.logout_icon);
+		click(driver, interfaces.interface_AdminstratorPage.logout_icon);
 	}
 	
 }

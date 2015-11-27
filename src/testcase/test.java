@@ -1,12 +1,12 @@
-package testcaseJoomla;
+package testcase;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-import actionJoomla.ac_AdministratorPage;
-import actionJoomla.ac_LoginPage;
+import actions.ac_AdministratorPage;
+import actions.ac_LoginPage;
 
 
 public class test extends common.Initialize{
