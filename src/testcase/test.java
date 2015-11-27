@@ -11,10 +11,6 @@ import actions.ac_LoginPage;
 
 public class test extends common.Initialize{
 
-	private WebDriver driver;
-	private ac_LoginPage LoginPage;	
-	private ac_AdministratorPage AdminPage ;
-	
 	@BeforeClass
 	public void Setup() {
 		driver = openAUT();
@@ -32,4 +28,7 @@ public class test extends common.Initialize{
 		driver.quit();
 	}
 	
+	private WebDriver driver;
+	private ac_LoginPage LoginPage;	
+	private ac_AdministratorPage AdminPage ;
 }
