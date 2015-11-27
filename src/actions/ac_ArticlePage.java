@@ -27,5 +27,12 @@ public class ac_ArticlePage extends commons.AutoElements {
 		switchframe(driver, interfaces.int_NewArtPage.body_frame_textbox, Textbody);
 	}
 	
+	/**
+	 * @author: TuanNguyen
+	 * @edit by:
+	 */
+	public void 
+	
+	
 	private WebDriver driver;
 }

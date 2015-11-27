@@ -28,9 +28,10 @@ public class Initialize {
 		if (control.contains("byID")) {
 			element = driver.findElement(By.id(control));
 		}
-		else 
+		else if (control.contains("byXPATH")){
 			element = driver.findElement(By.xpath(control));
-		
+		} else
+			element = driver.findElement(By.tagName(control));
 		return element;
 	}
 
