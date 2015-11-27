@@ -1,6 +1,6 @@
 package interfaces;
 
-public class Art_NewArtPage {
+public class int_NewArtPage {
 	public static final String title_texbox ="//input[@id='jform_title']";
 	public static final String category_dropdown="//select[@id='jform_catid']";
 	public static final String state_dropdown ="//select[@id='jform_state']";

@@ -44,8 +44,7 @@ public class AutoElements extends commons.Initialize {
 				element.click();
 		}
 			
-	}
-	
+	}	
 	
 	protected boolean verifyTrue(boolean condition, boolean halt) {
 		boolean pass = true;

@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18224" started-at="2015-11-27T04:27:00Z" finished-at="2015-11-27T04:27:18Z">
+  <suite name="Default suite" duration-ms="8377" started-at="2015-11-27T11:14:02Z" finished-at="2015-11-27T11:14:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18224" started-at="2015-11-27T04:27:00Z" finished-at="2015-11-27T04:27:18Z">
-      <class name="tcs_Articles.test">
-        <test-method status="PASS" signature="Setup()[pri:0, instance:tcs_Articles.test@763d9750]" name="Setup" is-config="true" duration-ms="9542" started-at="2015-11-27T11:27:00Z" finished-at="2015-11-27T11:27:10Z">
+    <test name="Default test" duration-ms="8377" started-at="2015-11-27T11:14:02Z" finished-at="2015-11-27T11:14:11Z">
+      <class name="testsuite_Articles.TC_JOOMLA_ARTICLE_001">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:testsuite_Articles.TC_JOOMLA_ARTICLE_001@5c0369c4]" name="Setup" is-config="true" duration-ms="6792" started-at="2015-11-27T18:14:02Z" finished-at="2015-11-27T18:14:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method status="PASS" signature="TC01_Verify_Login()[pri:0, instance:tcs_Articles.test@763d9750]" name="TC01_Verify_Login" duration-ms="5153" started-at="2015-11-27T11:27:10Z" finished-at="2015-11-27T11:27:15Z">
+        <test-method status="PASS" signature="TO_JOOMLA_ARTICLE_001()[pri:0, instance:testsuite_Articles.TC_JOOMLA_ARTICLE_001@5c0369c4]" name="TO_JOOMLA_ARTICLE_001" duration-ms="5" started-at="2015-11-27T18:14:09Z" finished-at="2015-11-27T18:14:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC01_Verify_Login -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:tcs_Articles.test@763d9750]" name="teardown" is-config="true" duration-ms="3512" started-at="2015-11-27T11:27:15Z" finished-at="2015-11-27T11:27:18Z">
+        </test-method> <!-- TO_JOOMLA_ARTICLE_001 -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testsuite_Articles.TC_JOOMLA_ARTICLE_001@5c0369c4]" name="teardown" is-config="true" duration-ms="1564" started-at="2015-11-27T18:14:09Z" finished-at="2015-11-27T18:14:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- tcs_Articles.test -->
+      </class> <!-- testsuite_Articles.TC_JOOMLA_ARTICLE_001 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
