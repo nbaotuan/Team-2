@@ -2,6 +2,7 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class AutoElements extends commons.Initialize {
@@ -19,6 +20,32 @@ public class AutoElements extends commons.Initialize {
 		element = findAnElement(driver, control);
 		return element.isDisplayed();
 	}
+	public void selectitems(WebDriver driver, String xpath, String item) {
+		 Select element= new Select (findAnElement (driver, xpath));
+		 element.selectByVisibleText(item);
+	}
+	
+	public void switchframe (WebDriver driver,String control, String framename){
+		WebElement bodyIframe = findAnElement (driver, control);
+		driver.switchTo().frame(bodyIframe);
+		element.sendKeys(framename);
+		driver.switchTo().defaultContent();		
+	}
+	
+	public void navigatemenu(WebDriver driver, String menuitem1, String menuitem2, String menuitem3 ){
+		element = findAnElement(driver, menuitem1);
+		element.click();
+		if (menuitem2 != null){			
+			element = findAnElement(driver, menuitem2);
+			element.click();
+		}
+		else if (menuitem3 != null) {
+				element = findAnElement(driver, menuitem3);
+				element.click();
+		}
+			
+	}
+	
 	
 	protected boolean verifyTrue(boolean condition, boolean halt) {
 		boolean pass = true;
