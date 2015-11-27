@@ -1,4 +1,4 @@
-package testcase;
+package tcs_Articles;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
@@ -9,7 +9,7 @@ import actions.ac_AdministratorPage;
 import actions.ac_LoginPage;
 
 
-public class test extends common.Initialize{
+public class test extends commons.Initialize{
 
 	@BeforeClass
 	public void Setup() {

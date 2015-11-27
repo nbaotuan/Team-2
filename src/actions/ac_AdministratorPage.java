@@ -3,7 +3,7 @@ package actions;
 import org.openqa.selenium.WebDriver;
 
 
-public class ac_AdministratorPage extends common.AutoElements{
+public class ac_AdministratorPage extends commons.AutoElements{
 	
 	private WebDriver driver;
 	
@@ -18,7 +18,7 @@ public class ac_AdministratorPage extends common.AutoElements{
 	}
 	
 	public void Logout(){		
-		click(driver, interfaces.interface_AdminstratorPage.logout_icon);
+		click(driver, interfaces.interface_Gen_AdminstratorPage.logout_icon);
 	}
 	
 }

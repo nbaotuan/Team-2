@@ -2,9 +2,7 @@ package actions;
 
 import org.openqa.selenium.WebDriver;
 
-import actions.ac_LoginPage;
-
-public class ac_LoginPage extends common.AutoElements{
+public class ac_LoginPage extends commons.AutoElements{
 	
 	//khai bao
 	private WebDriver driver;
@@ -21,8 +19,8 @@ public class ac_LoginPage extends common.AutoElements{
 	}
 	
 	public void Login (String Username, String Password){
-		enter(driver, interfaces.interface_LoginPage.username_textbox, Username);
-		enter(driver, interfaces.interface_LoginPage.password_textbox, Password);
-		click(driver,interfaces.interface_LoginPage.login_button);
+		enter(driver, interfaces.interface_Gen_LoginPage.username_textbox, Username);
+		enter(driver, interfaces.interface_Gen_LoginPage.password_textbox, Password);
+		click(driver,interfaces.interface_Gen_LoginPage.login_button);
 	}
 }

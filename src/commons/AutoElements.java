@@ -1,10 +1,10 @@
-package common;
+package commons;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class AutoElements extends common.Initialize {
+public class AutoElements extends commons.Initialize {
 	public void click(WebDriver driver, String control){
 		element  = findAnElement(driver, control);
 		element.click();
