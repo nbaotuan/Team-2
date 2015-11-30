@@ -31,7 +31,7 @@ public class ac_ArticlePage extends commons.AutoElements {
 	 * @author: TuanNguyen
 	 * @edit by:
 	 */
-	public void 
+	//public void 
 	
 	
 	private WebDriver driver;

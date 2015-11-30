@@ -1,25 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8377" started-at="2015-11-27T11:14:02Z" finished-at="2015-11-27T11:14:11Z">
+  <suite name="Default suite" duration-ms="16088" started-at="2015-11-30T08:25:11Z" finished-at="2015-11-30T08:25:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8377" started-at="2015-11-27T11:14:02Z" finished-at="2015-11-27T11:14:11Z">
-      <class name="testsuite_Articles.TC_JOOMLA_ARTICLE_001">
-        <test-method status="PASS" signature="Setup()[pri:0, instance:testsuite_Articles.TC_JOOMLA_ARTICLE_001@5c0369c4]" name="Setup" is-config="true" duration-ms="6792" started-at="2015-11-27T18:14:02Z" finished-at="2015-11-27T18:14:09Z">
+    <test name="Default test" duration-ms="16088" started-at="2015-11-30T08:25:11Z" finished-at="2015-11-30T08:25:28Z">
+      <class name="testsuite_Articles.test">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:testsuite_Articles.test@6979e8cb]" name="Setup" is-config="true" duration-ms="6004" started-at="2015-11-30T15:25:12Z" finished-at="2015-11-30T15:25:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method status="PASS" signature="TO_JOOMLA_ARTICLE_001()[pri:0, instance:testsuite_Articles.TC_JOOMLA_ARTICLE_001@5c0369c4]" name="TO_JOOMLA_ARTICLE_001" duration-ms="5" started-at="2015-11-27T18:14:09Z" finished-at="2015-11-27T18:14:09Z">
+        <test-method status="FAIL" signature="TC01_Verify_Login()[pri:0, instance:testsuite_Articles.test@6979e8cb]" name="TC01_Verify_Login" duration-ms="10062" started-at="2015-11-30T15:25:18Z" finished-at="2015-11-30T15:25:28Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: {"method":"tag name","selector":"//input[@name='username']"}
+Command duration or timeout: 10.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'LGDN15019-W7D01', ip: '192.168.191.43', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=29.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 93639d24-3534-408c-a149-bf20fef145e4
+*** Element info: {Using=tag name, value=//input[@name='username']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"tag name","selector":"//input[@name='username']"}
+Command duration or timeout: 10.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'LGDN15019-W7D01', ip: '192.168.191.43', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=29.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 93639d24-3534-408c-a149-bf20fef145e4
+*** Element info: {Using=tag name, value=//input[@name='username']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByTagName(RemoteWebDriver.java:435)
+	at org.openqa.selenium.By$ByTagName.findElement(By.java:334)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
+	at commons.Initialize.findAnElement(Initialize.java:34)
+	at commons.AutoElements.enter(AutoElements.java:15)
+	at actions.ac_LoginPage.Login(ac_LoginPage.java:19)
+	at testsuite_Articles.test.TC01_Verify_Login(test.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:821)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:773)
+	at org.testng.TestRunner.run(TestRunner.java:623)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
+	at org.testng.TestNG.run(TestNG.java:1018)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"tag name","selector":"//input[@name='username']"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.48.2', revision: '41bccdd', time: '2015-10-09 19:59:12'
+System info: host: 'LGDN15019-W7D01', ip: '192.168.191.43', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/TUAN~1.NGU/AppData/Local/Temp/anonymous2493698417877916461webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/TUAN~1.NGU/AppData/Local/Temp/anonymous2493698417877916461webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TO_JOOMLA_ARTICLE_001 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testsuite_Articles.TC_JOOMLA_ARTICLE_001@5c0369c4]" name="teardown" is-config="true" duration-ms="1564" started-at="2015-11-27T18:14:09Z" finished-at="2015-11-27T18:14:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- testsuite_Articles.TC_JOOMLA_ARTICLE_001 -->
+        </test-method> <!-- TC01_Verify_Login -->
+      </class> <!-- testsuite_Articles.test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
