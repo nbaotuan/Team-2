@@ -1,6 +1,6 @@
 package interfaces;
 
-public class interface_Cont_NewContPage {
+public class int_NewContPage {
 	
 	//toolbar button
 	public static final String save_button = "//li[@id='toolbar-apply']";
@@ -18,4 +18,6 @@ public class interface_Cont_NewContPage {
 	public static final String featured_dropdown = "//select[@id='jform_featured']";
 	public static final String image_button = "//div[@class='image']";
 	
+	// iframe
+	public static final String otherinfo_iframe = "//iframe[@id='jform_misc_ifr']";
 }

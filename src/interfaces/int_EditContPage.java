@@ -1,6 +1,6 @@
 package interfaces;
 
-public class interface_Cont_EditContPage {
+public class int_EditContPage {
 	//toolbar button
 	public static final String save_button = "//li[@id='toolbar-apply']";
 	public static final String save_close_button = "//li[@id='toolbar-save']";
@@ -17,4 +17,7 @@ public class interface_Cont_EditContPage {
 	public static final String language_dropdown = "//select[@id='jform_language']";
 	public static final String featured_dropdown = "//select[@id='jform_featured']";
 	public static final String image_button = "//div[@class='image']";	
+	
+	// iframe
+	public static final String otherinfo_iframe = "//iframe[@id='jform_misc_ifr']";
 }

@@ -1,6 +1,6 @@
 package interfaces;
 
-public class interface_Cont_ContactsPage {
+public class int_ContactsPage {
 	//toolbar button
 	public static final String new_button = "//li[@id='toolbar-new']";
 	public static final String edit_button = "//li[@id='toolbar-edit']";
