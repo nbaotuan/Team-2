@@ -25,14 +25,13 @@ public class Initialize {
 	}
 
 	public WebElement findAnElement (WebDriver driver, String control){
-		if (control.contains("id")) {
+		if (control.contains("byID")) {
 			element = driver.findElement(By.id(control));
 		}
-		else if (control.contains("xpath")){
-			element = driver.findElement(By.xpath(control));			
-		} else {			
+		else if (control.contains("bytagName")){
 			element = driver.findElement(By.tagName(control));
-		}
+		} else
+			element = driver.findElement(By.xpath(control));
 		return element;
 	}
 

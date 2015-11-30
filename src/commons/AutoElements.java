@@ -32,18 +32,33 @@ public class AutoElements extends commons.Initialize {
 		driver.switchTo().defaultContent();		
 	}
 	
+	/**
+	 * @author: 
+	 * @edit by: 
+	 */
 	public void navigatemenu(WebDriver driver, String menuitem1, String menuitem2, String menuitem3 ){
-		element = findAnElement(driver, menuitem1);
-		element.click();
-		if (menuitem2 != null){			
-			element = findAnElement(driver, menuitem2);
-			element.click();
+		String menuitem1_path = "//a[text()='" + menuitem1 + "']"; 
+		String menuitem2_path = menuitem1_path + "/../ul/li/a[text()='" + menuitem2 + "']";
+		String menuitem3_path = menuitem2_path + "/../ul/li/a[text()='" + menuitem3 + "']";
+		String temp = "";
+		Actions action = new Actions(driver);
+		if (menuitem1 != "")
+		{
+			action.moveToElement(driver.findElement(By.xpath(menuitem1_path)));
+			temp = menuitem1_path; 
 		}
-		else if (menuitem3 != null) {
-				element = findAnElement(driver, menuitem3);
-				element.click();
+		if (menuitem2 != "")
+		{
+			action.moveToElement(driver.findElement(By.xpath(menuitem2_path)));
+			temp = menuitem2_path; 
 		}
-			
+		if (menuitem3 != "")
+		{
+			action.moveToElement(driver.findElement(By.xpath(menuitem3_path)));
+			temp = menuitem3_path; 
+		}
+		action.build().perform();
+		click(driver, temp);					
 	}	
 	
 	protected boolean verifyTrue(boolean condition, boolean halt) {
