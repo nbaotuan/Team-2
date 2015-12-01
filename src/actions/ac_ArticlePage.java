@@ -18,11 +18,11 @@ public class ac_ArticlePage extends commons.AutoElements {
 	 * @author: TuanNguyen
 	 * @edit by:
 	 */
-	public void createNewArticle (String Titlename, String CategoryArt, String State, String Access, String Textbody, String Action ){
+	public void createNewArticle (String Titlename, String CategoryArt, String Status, String Access, String Textbody, String Action ){
 		//enter value
 		enter(driver, interfaces.int_NewArtPage.title_texbox, Titlename);
 		selectitems(driver, interfaces.int_NewArtPage.category_dropdown, CategoryArt);
-		selectitems(driver, interfaces.int_NewArtPage.state_dropdown, State);
+		selectitems(driver, interfaces.int_NewArtPage.status_dropdown, Status);
 		selectitems(driver, interfaces.int_NewArtPage.access_dropdown, Access);
 		switchframe(driver, interfaces.int_NewArtPage.body_frame_textbox, Textbody);
 	}
