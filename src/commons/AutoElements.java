@@ -36,26 +36,26 @@ public class AutoElements extends commons.Initialize {
 	}
 	
 	/**
-	 * @author: 
+	 * @author: Giang Nguyen
 	 * @edit by: 
 	 */
 	public void navigatemenu(WebDriver driver, String menuitem1, String menuitem2, String menuitem3 ){
 		String menuitem1_path = "//a[text()='" + menuitem1 + "']"; 
 		String menuitem2_path = menuitem1_path + "/../ul/li/a[text()='" + menuitem2 + "']";
 		String menuitem3_path = menuitem2_path + "/../ul/li/a[text()='" + menuitem3 + "']";
-		String temp = "";
+		String temp = null;
 		Actions action = new Actions(driver);
-		if (menuitem1 != "")
+		if (menuitem1 != null)
 		{
 			action.moveToElement(driver.findElement(By.xpath(menuitem1_path)));
 			temp = menuitem1_path; 
 		}
-		if (menuitem2 != "")
+		if (menuitem2 != null)
 		{
 			action.moveToElement(driver.findElement(By.xpath(menuitem2_path)));
 			temp = menuitem2_path; 
 		}
-		if (menuitem3 != "")
+		if (menuitem3 != null)
 		{
 			action.moveToElement(driver.findElement(By.xpath(menuitem3_path)));
 			temp = menuitem3_path; 
