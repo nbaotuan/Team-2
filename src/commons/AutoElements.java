@@ -63,43 +63,91 @@ public class AutoElements extends commons.Initialize {
 		action.build().perform();
 		click(driver, temp);					
 	}	
-	
-	protected boolean verifyTrue(boolean condition, boolean halt) {
-		boolean pass = true;
-		if (halt == false) {
-			try {
-				Assert.assertTrue(condition);
-			} catch (Throwable e) {
-				pass = false;
-			}
-		} else {
-			Assert.assertTrue(condition);
-		}
-		return pass;
-	}
+	/**
+	  * Verify condition is true
+	  * @param condition
+	  */
+	 protected void verifyTrue(boolean condition) {
+	  Assert.assertTrue(condition);
+	 }
 
-	protected boolean verifyTrue(boolean condition) {
-		return verifyTrue(condition, true);
-	}
+	 /**
+	  * Verify condition is false
+	  * @param condition
+	  */
+	 protected void verifyFalse(boolean condition) {
+	  Assert.assertFalse(condition);
+	 }
 
-	protected boolean verifyFalse(boolean condition, boolean halt) {
-		boolean pass = true;
-		if (halt == false) {
-			try {
-				Assert.assertFalse(condition);
-			} catch (Throwable e) {
-				pass = false;
-			}
-		} else {
-			Assert.assertFalse(condition);
-		}
-		return pass;
-
-	}
-
-	protected boolean verifyFalse(boolean condition) {
-		return verifyFalse(condition, false);
-	}
-	
+	 /**
+	  * Verify whether actual result meets expectation
+	  * @param actual
+	  * @param expected
+	  */
+	 protected void verifyEquals(String actual, String expected) {
+	  Assert.assertEquals(actual, expected);
+	 }
+	 
+	 /**
+	  * Verify True with parameter specific the test will be ended or continued
+	  * @param condition
+	  * @param iscontinue continue when test fail true/false
+	  */
+	    protected void verifyTrue(boolean condition, boolean iscontinue)
+	    {
+	        if ( iscontinue == true ) {
+	            try {
+	                Assert.assertTrue(condition);
+	            } catch (Throwable e) {
+	             Assert.fail("Condition is not matched");
+	            }
+	        } else {
+	            Assert.assertTrue(condition);
+	        }
+	    }
+	    
+	 public boolean doesTextDisplay(WebDriver driver, String text) {
+	  String result = driver.findElement(By.tagName("body")).getText();
+	  Boolean check = result.contains(text);
+	  return check;
+	 }
+	 
+	 public boolean doesElementExistByType(WebDriver driver, String type, String item) {
+	  Boolean check = null;
+	  if (type == "link") {
+	   check = driver.findElement(By.linkText(item)).isDisplayed();
+	  }
+	  return check;
+	 }
+	 
+	 public void searchItem(WebDriver driver, String searchtext) {
+	  WebElement txtbox = driver.findElement(By.xpath(interfaces.int_ArticlesPage.filter_textbox));
+	  String a = txtbox.getAttribute("value").toString(); 
+	  if ( !a.equals(searchtext)) {
+	   txtbox.clear();
+	   waitForPageLoad(Config.short_wait_time);
+	   txtbox.sendKeys(searchtext);
+	   driver.findElement(By.xpath(interfaces.int_ArticlesPage.search_button)).click();
+	  }
+	 }
+	 public void waitForPageLoad(long waittime){
+	  try {
+	   Thread.sleep(waittime*1000);
+	  } catch (InterruptedException e) {
+	   e.printStackTrace();
+	  }
+	 }
+	 /**
+	  * @author: TuanNguyen
+	  * @edit by:
+	  */
+	 public boolean doesTextPresent(String message){
+	  return doesTextDisplay(driver, message);
+	 }
+	 
+	 public boolean doesArticleExist(String article) {
+	  searchItem(driver, article);
+	  return doesElementExistByType(driver, "link", article);
+	 }
 	protected WebElement element;
 }
