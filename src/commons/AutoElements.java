@@ -1,5 +1,7 @@
 package commons;
 
+import java.util.Calendar;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +28,26 @@ public class AutoElements extends commons.Initialize {
 		 Select element= new Select (findAnElement (driver, xpath));
 		 element.selectByVisibleText(item);
 	}
+	public void selectCheckboxItem(WebDriver driver, String item) {
+		driver.findElement(By.xpath("//td[a[contains(text(),'" + item+ "')]]/../td/input[@type='checkbox']")).click();
+	}
+	
+	public static String randUniqueString(String basestring) {
+
+		  int day, month, year;
+		  int second, minute, hour;
+		  Calendar date = Calendar.getInstance();
+
+		  day = date.get(Calendar.DAY_OF_MONTH);
+		  month = date.get(Calendar.MONTH);
+		  year = date.get(Calendar.YEAR);
+
+		  second = date.get(Calendar.SECOND);
+		  minute = date.get(Calendar.MINUTE);
+		  hour = date.get(Calendar.HOUR);
+
+		  return basestring + day + month + year + second + minute + hour;
+		 }
 	
 	public void switchframe (WebDriver driver,String control, String framecontrol, String value){
 		WebElement bodyIframe = findAnElement (driver, control);
