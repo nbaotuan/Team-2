@@ -1,11 +1,11 @@
 package testsuite_Contacts;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.WebDriver;
 //import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import actions.ac_ContactPage;
