@@ -9,7 +9,7 @@ import actions.ac_AdministratorPage;
 import actions.ac_LoginPage;
 import commons.Config;
 
-public class Testsuite_JOOMLA_ARTICLE_001 extends commons.AutoElements {
+public class TM_JOOMLA_ARTICLE_1to4 extends commons.AutoElements {
 	@BeforeClass
 	public void Setup() {
 		driver = openAUT();
