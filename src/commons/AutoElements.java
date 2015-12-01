@@ -27,10 +27,11 @@ public class AutoElements extends commons.Initialize {
 		 element.selectByVisibleText(item);
 	}
 	
-	public void switchframe (WebDriver driver,String control, String framename){
+	public void switchframe (WebDriver driver,String control, String framecontrol, String value){
 		WebElement bodyIframe = findAnElement (driver, control);
 		driver.switchTo().frame(bodyIframe);
-		element.sendKeys(framename);
+		element = findAnElement(driver, framecontrol);
+		element.sendKeys(value);
 		driver.switchTo().defaultContent();		
 	}
 	

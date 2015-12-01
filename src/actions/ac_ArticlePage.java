@@ -2,6 +2,8 @@ package actions;
 
 import org.openqa.selenium.WebDriver;
 
+import interfaces.int_NewArtPage;
+
 public class ac_ArticlePage extends commons.AutoElements {
 	
 	public ac_ArticlePage(WebDriver driver) {
@@ -16,15 +18,21 @@ public class ac_ArticlePage extends commons.AutoElements {
 	}
 	/**
 	 * @author: TuanNguyen
-	 * @edit by:
+	 * @edit by: Giang Nguyen
 	 */
-	public void createNewArticle (String Titlename, String CategoryArt, String Status, String Access, String Textbody, String Action ){
-		//enter value
-		enter(driver, interfaces.int_NewArtPage.title_texbox, Titlename);
-		selectitems(driver, interfaces.int_NewArtPage.category_dropdown, CategoryArt);
-		selectitems(driver, interfaces.int_NewArtPage.status_dropdown, Status);
-		selectitems(driver, interfaces.int_NewArtPage.access_dropdown, Access);
-		switchframe(driver, interfaces.int_NewArtPage.body_frame_textbox, Textbody);
+	public void createNewArticle(String option, String name, String category, String state, String access, String arttext, String saveoption){
+		click(driver, option);
+		if (name != null)
+			enter(driver, int_NewArtPage.title_texbox, name);
+		if (category != null)
+			selectitems(driver, int_NewArtPage.category_dropdown, category);
+		if (state != null)
+			selectitems(driver, int_NewArtPage.status_dropdown, state);
+		if (access != null)
+			selectitems(driver, int_NewArtPage.access_dropdown, access);
+		if (arttext != null)
+			switchframe(driver, int_NewArtPage.arttext_frame_textbox, int_NewArtPage.body_frame_textbox, arttext);
+		click(driver, saveoption);
 	}
 	
 	/**
