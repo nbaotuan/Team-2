@@ -2,6 +2,7 @@ package actions;
 
 import org.openqa.selenium.WebDriver;
 
+import interfaces.int_ArticlesPage;
 import interfaces.int_NewArtPage;
 
 public class ac_ArticlePage extends commons.AutoElements {
@@ -20,8 +21,8 @@ public class ac_ArticlePage extends commons.AutoElements {
 	 * @author: TuanNguyen
 	 * @edit by: Giang Nguyen
 	 */
-	public void createNewArticle(String option, String name, String category, String state, String access, String arttext, String saveoption){
-		click(driver, option);
+	public void createNewArticle(String name, String category, String state, String access, String arttext, String saveoption){
+		click(driver, int_ArticlesPage.new_button);
 		if (name != null)
 			enter(driver, int_NewArtPage.title_texbox, name);
 		if (category != null)
@@ -32,7 +33,14 @@ public class ac_ArticlePage extends commons.AutoElements {
 			selectitems(driver, int_NewArtPage.access_dropdown, access);
 		if (arttext != null)
 			switchframe(driver, int_NewArtPage.arttext_frame_textbox, int_NewArtPage.body_frame_textbox, arttext);
-		click(driver, saveoption);
+		if (saveoption == "save")
+			click(driver, int_NewArtPage.save_button);
+		else if (saveoption == "save & close")
+			click(driver, int_NewArtPage.saveclose_button);
+		else if (saveoption == "save & new")
+			click(driver, int_NewArtPage.savenew_button);
+		else if (saveoption == "cancel")
+			click(driver, int_NewArtPage.cancel_button);
 	}
 	
 	/**
