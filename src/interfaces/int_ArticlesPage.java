@@ -3,7 +3,7 @@ package interfaces;
 public class int_ArticlesPage {
 	
 	
-	public static final String button = "//li[@id='toolbar-new']/a/span";
+	public static final String new_button = "//li[@id='toolbar-new']/a/span";
 	public static final String edit_icon= "//li[@id='toolbar-edit']/a/span";
 	public static final String publish_button= "//li[@id='toolbar-publish']/a/span";
 	public static final String unpublish_button= "//li[@id='toolbar-unpublish']/a/span";
