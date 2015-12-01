@@ -36,11 +36,14 @@ public class ac_ArticlePage extends commons.AutoElements {
 	}
 	
 	/**
-	 * @author: TuanNguyen
+	 * @author: Giang Nguyen
 	 * @edit by:
 	 */
-	//public void 
-	
+	public void checkArticleExist(String message, String title)
+	{
+		verifyTrue(doesTextPresent(message));
+		verifyTrue(doesitemExist(title));
+	} 
 	
 	private WebDriver driver;
 }

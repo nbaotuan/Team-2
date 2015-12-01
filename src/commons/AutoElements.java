@@ -139,15 +139,15 @@ public class AutoElements extends commons.Initialize {
 	 }
 	 /**
 	  * @author: TuanNguyen
-	  * @edit by:
+	  * @edit by: Giang Nguyen
 	  */
 	 public boolean doesTextPresent(String message){
 	  return doesTextDisplay(driver, message);
 	 }
 	 
-	 public boolean doesArticleExist(String article) {
-	  searchItem(driver, article);
-	  return doesElementExistByType(driver, "link", article);
+	 public boolean doesitemExist(String item) {
+	  searchItem(driver, item);
+	  return doesElementExistByType(driver, "link", item);
 	 }
 	protected WebElement element;
 }
