@@ -19,7 +19,10 @@ public class AutoElements extends commons.Initialize {
 		element  = findAnElement(driver, control);
 		element.sendKeys(value);
 	}
-	
+	public void clearText(WebDriver driver, String control)
+	{
+		driver.findElement(By.xpath(control)).clear();
+	}
 	public boolean doesControlExist(WebDriver driver, String control){
 		element = findAnElement(driver, control);
 		return element.isDisplayed();
@@ -171,6 +174,20 @@ public class AutoElements extends commons.Initialize {
 	 public boolean doesitemExist(WebDriver driver, String item) {
 	  searchItem(driver, item);
 	  return doesElementExistByType(driver, "link", item);
+	 }
+	 /**
+	  * @author: Giang Nguyen
+	  * @edit by: 
+	  */
+	 public boolean doesitemPublish(WebDriver driver, String item, String status)
+	 {
+		 String xpath =  "//td[a[contains(text(),'" + item + "')]]/../td/a/span/span[contains(text(),'"+ status +"')]";
+		 //String.format("//li[contains(text(),'%s')]", text);
+		 //WebElement result = driver.findElement(By.xpath(xtext));
+		 WebElement temp = driver.findElement(By.xpath(xpath));
+		 String result = temp.getText();
+		 Boolean check = result.contains(status);
+		 return check;
 	 }
 	protected WebElement element;
 }
