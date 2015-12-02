@@ -28,7 +28,6 @@ public class ac_ArticlePage extends commons.AutoElements {
 	 * @edit by: Giang Nguyen
 	 */
 	public void fillInfoArticle(String name, String category, String state, String access, String arttext, String saveoption){
-		//click(driver, int_ArticlesPage.new_button);
 		if (name != null)
 			driver.findElement(By.xpath(int_NewArtPage.title_texbox)).clear();
 			enter(driver, int_NewArtPage.title_texbox, name);
@@ -52,12 +51,12 @@ public class ac_ArticlePage extends commons.AutoElements {
 	
 	/**
 	 * @author: Giang Nguyen
-	 * @edit by:
+	 * @edit by: Hang Tran
 	 */
 	public void checkArticleExist(String message, String title)
 	{
-		verifyTrue(doesTextPresent(message));
-		verifyTrue(doesitemExist(title));
+		verifyTrue(doesTextPresent(driver, message));
+		verifyTrue(doesitemExist(driver, title));
 	} 
 	
 	private WebDriver driver;

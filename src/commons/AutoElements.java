@@ -162,13 +162,13 @@ public class AutoElements extends commons.Initialize {
 	 }
 	 /**
 	  * @author: TuanNguyen
-	  * @edit by: Giang Nguyen
+	  * @edit by: Giang Nguyen, Hang Tran
 	  */
-	 public boolean doesTextPresent(String message){
+	 public boolean doesTextPresent(WebDriver driver, String message){
 	  return doesTextDisplay(driver, message);
 	 }
 	 
-	 public boolean doesitemExist(String item) {
+	 public boolean doesitemExist(WebDriver driver, String item) {
 	  searchItem(driver, item);
 	  return doesElementExistByType(driver, "link", item);
 	 }
