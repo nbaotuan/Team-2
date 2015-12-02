@@ -10,12 +10,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class AutoElements extends commons.Initialize {
-	public void click(WebDriver driver, String control){
+	public void click(WebDriver driver, String control)
+	{
 		element  = findAnElement(driver, control);
 		element.click();
 	}
 	
-	public void enter(WebDriver driver, String control, String value){
+	public void enter(WebDriver driver, String control, String value)
+	{
 		element  = findAnElement(driver, control);
 		element.sendKeys(value);
 	}
@@ -23,37 +25,42 @@ public class AutoElements extends commons.Initialize {
 	{
 		driver.findElement(By.xpath(control)).clear();
 	}
-	public boolean doesControlExist(WebDriver driver, String control){
+	public boolean doesControlExist(WebDriver driver, String control)
+	{
 		element = findAnElement(driver, control);
 		return element.isDisplayed();
 	}
-	public void selectitems(WebDriver driver, String xpath, String item) {
+	public void selectitems(WebDriver driver, String xpath, String item) 
+	{
 		 Select element= new Select (findAnElement (driver, xpath));
 		 element.selectByVisibleText(item);
 	}
-	public void selectCheckboxItem(WebDriver driver, String item) {
+	public void selectCheckboxItem(WebDriver driver, String item) 
+	{
 		searchItem(driver, item);
 		driver.findElement(By.xpath("//td[a[contains(text(),'" + item+ "')]]/../td/input[@type='checkbox']")).click();
 	}
 	
-	public static String randUniqueString(String basestring) {
+	public static String randUniqueString(String basestring) 
+	{
 
-		  int day, month, year;
-		  int second, minute, hour;
-		  Calendar date = Calendar.getInstance();
+		int day, month, year;
+		int second, minute, hour;
+		Calendar date = Calendar.getInstance();
 
-		  day = date.get(Calendar.DAY_OF_MONTH);
-		  month = date.get(Calendar.MONTH);
-		  year = date.get(Calendar.YEAR);
+		day = date.get(Calendar.DAY_OF_MONTH);
+		month = date.get(Calendar.MONTH);
+		year = date.get(Calendar.YEAR);
 
-		  second = date.get(Calendar.SECOND);
-		  minute = date.get(Calendar.MINUTE);
-		  hour = date.get(Calendar.HOUR);
+		second = date.get(Calendar.SECOND);
+		minute = date.get(Calendar.MINUTE);
+		hour = date.get(Calendar.HOUR);
 
-		  return basestring + day + month + year + second + minute + hour;
-		 }
+		return basestring + day + month + year + second + minute + hour;
+	}
 	
-	public void switchframe (WebDriver driver,String control, String framecontrol, String value){
+	public void switchframe (WebDriver driver,String control, String framecontrol, String value)
+	{
 		WebElement bodyIframe = findAnElement (driver, control);
 		driver.switchTo().frame(bodyIframe);
 		element = findAnElement(driver, framecontrol);
@@ -65,7 +72,8 @@ public class AutoElements extends commons.Initialize {
 	 * @author: Giang Nguyen
 	 * @edit by: 
 	 */
-	public void navigatemenu(WebDriver driver, String menuitem1, String menuitem2, String menuitem3 ){
+	public void navigatemenu(WebDriver driver, String menuitem1, String menuitem2, String menuitem3 )
+	{
 		String menuitem1_path = "//a[text()='" + menuitem1 + "']"; 
 		String menuitem2_path = menuitem1_path + "/../ul/li/a[text()='" + menuitem2 + "']";
 		String menuitem3_path = menuitem2_path + "/../ul/li/a[text()='" + menuitem3 + "']";
@@ -93,16 +101,18 @@ public class AutoElements extends commons.Initialize {
 	  * Verify condition is true
 	  * @param condition
 	  */
-	 protected void verifyTrue(boolean condition) {
-	  Assert.assertTrue(condition);
+	 protected void verifyTrue(boolean condition) 
+	 {
+		 Assert.assertTrue(condition);
 	 }
 
 	 /**
 	  * Verify condition is false
 	  * @param condition
 	  */
-	 protected void verifyFalse(boolean condition) {
-	  Assert.assertFalse(condition);
+	 protected void verifyFalse(boolean condition) 
+	 {
+		 Assert.assertFalse(condition);
 	 }
 
 	 /**
@@ -110,8 +120,9 @@ public class AutoElements extends commons.Initialize {
 	  * @param actual
 	  * @param expected
 	  */
-	 protected void verifyEquals(String actual, String expected) {
-	  Assert.assertEquals(actual, expected);
+	 protected void verifyEquals(String actual, String expected) 
+	 {
+		 Assert.assertEquals(actual, expected);
 	 }
 	 
 	 /**
@@ -119,10 +130,10 @@ public class AutoElements extends commons.Initialize {
 	  * @param condition
 	  * @param iscontinue continue when test fail true/false
 	  */
-	    protected void verifyTrue(boolean condition, boolean iscontinue)
-	    {
-	        if ( iscontinue == true ) {
-	            try {
+	 protected void verifyTrue(boolean condition, boolean iscontinue)
+	 {
+		 if ( iscontinue == true ) {
+			 try {
 	                Assert.assertTrue(condition);
 	            } catch (Throwable e) {
 	             Assert.fail("Condition is not matched");
@@ -132,21 +143,24 @@ public class AutoElements extends commons.Initialize {
 	        }
 	    }
 	    
-	 public boolean doesTextDisplay(WebDriver driver, String text) {
-	  String result = driver.findElement(By.tagName("body")).getText();
-	  Boolean check = result.contains(text);
-	  return check;
+	 public boolean doesTextDisplay(WebDriver driver, String text)
+	 {
+		 String result = driver.findElement(By.tagName("body")).getText();
+		 Boolean check = result.contains(text);
+		 return check;
 	 }
 	 
-	 public boolean doesElementExistByType(WebDriver driver, String type, String item) {
-	  Boolean check = null;
-	  if (type == "link") {
-	   check = driver.findElement(By.linkText(item)).isDisplayed();
+	 public boolean doesElementExistByType(WebDriver driver, String type, String item) 
+	 {
+		 Boolean check = null;
+		 if (type == "link") {
+			 check = driver.findElement(By.linkText(item)).isDisplayed();
 	  }
 	  return check;
 	 }
 	 
-	 public void searchItem(WebDriver driver, String searchtext) {
+	 public void searchItem(WebDriver driver, String searchtext) 
+	 {
 	  WebElement txtbox = driver.findElement(By.xpath(interfaces.int_ArticlesPage.filter_textbox));
 	  String a = txtbox.getAttribute("value").toString(); 
 	  if ( !a.equals(searchtext)) {
@@ -167,13 +181,15 @@ public class AutoElements extends commons.Initialize {
 	  * @author: TuanNguyen
 	  * @edit by: Giang Nguyen, Hang Tran
 	  */
-	 public boolean doesTextPresent(WebDriver driver, String message){
-	  return doesTextDisplay(driver, message);
+	 public boolean doesTextPresent(WebDriver driver, String message)
+	 {
+		 return doesTextDisplay(driver, message);
 	 }
 	 
-	 public boolean doesitemExist(WebDriver driver, String item) {
-	  searchItem(driver, item);
-	  return doesElementExistByType(driver, "link", item);
+	 public boolean doesitemExist(WebDriver driver, String item)
+	 {
+		 searchItem(driver, item);
+		 return doesElementExistByType(driver, "link", item);
 	 }
 	 /**
 	  * @author: Giang Nguyen
