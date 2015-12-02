@@ -1,5 +1,7 @@
 package commons;
 
+import java.util.Calendar;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +28,26 @@ public class AutoElements extends commons.Initialize {
 		 Select element= new Select (findAnElement (driver, xpath));
 		 element.selectByVisibleText(item);
 	}
+	public void selectCheckboxItem(WebDriver driver, String item) {
+		driver.findElement(By.xpath("//td[a[contains(text(),'" + item+ "')]]/../td/input[@type='checkbox']")).click();
+	}
+	
+	public static String randUniqueString(String basestring) {
+
+		  int day, month, year;
+		  int second, minute, hour;
+		  Calendar date = Calendar.getInstance();
+
+		  day = date.get(Calendar.DAY_OF_MONTH);
+		  month = date.get(Calendar.MONTH);
+		  year = date.get(Calendar.YEAR);
+
+		  second = date.get(Calendar.SECOND);
+		  minute = date.get(Calendar.MINUTE);
+		  hour = date.get(Calendar.HOUR);
+
+		  return basestring + day + month + year + second + minute + hour;
+		 }
 	
 	public void switchframe (WebDriver driver,String control, String framecontrol, String value){
 		WebElement bodyIframe = findAnElement (driver, control);
@@ -36,26 +58,26 @@ public class AutoElements extends commons.Initialize {
 	}
 	
 	/**
-	 * @author: 
+	 * @author: Giang Nguyen
 	 * @edit by: 
 	 */
 	public void navigatemenu(WebDriver driver, String menuitem1, String menuitem2, String menuitem3 ){
 		String menuitem1_path = "//a[text()='" + menuitem1 + "']"; 
 		String menuitem2_path = menuitem1_path + "/../ul/li/a[text()='" + menuitem2 + "']";
 		String menuitem3_path = menuitem2_path + "/../ul/li/a[text()='" + menuitem3 + "']";
-		String temp = "";
+		String temp = null;
 		Actions action = new Actions(driver);
-		if (menuitem1 != "")
+		if (menuitem1 != null)
 		{
 			action.moveToElement(driver.findElement(By.xpath(menuitem1_path)));
 			temp = menuitem1_path; 
 		}
-		if (menuitem2 != "")
+		if (menuitem2 != null)
 		{
 			action.moveToElement(driver.findElement(By.xpath(menuitem2_path)));
 			temp = menuitem2_path; 
 		}
-		if (menuitem3 != "")
+		if (menuitem3 != null)
 		{
 			action.moveToElement(driver.findElement(By.xpath(menuitem3_path)));
 			temp = menuitem3_path; 
@@ -63,43 +85,91 @@ public class AutoElements extends commons.Initialize {
 		action.build().perform();
 		click(driver, temp);					
 	}	
-	
-	protected boolean verifyTrue(boolean condition, boolean halt) {
-		boolean pass = true;
-		if (halt == false) {
-			try {
-				Assert.assertTrue(condition);
-			} catch (Throwable e) {
-				pass = false;
-			}
-		} else {
-			Assert.assertTrue(condition);
-		}
-		return pass;
-	}
+	/**
+	  * Verify condition is true
+	  * @param condition
+	  */
+	 protected void verifyTrue(boolean condition) {
+	  Assert.assertTrue(condition);
+	 }
 
-	protected boolean verifyTrue(boolean condition) {
-		return verifyTrue(condition, true);
-	}
+	 /**
+	  * Verify condition is false
+	  * @param condition
+	  */
+	 protected void verifyFalse(boolean condition) {
+	  Assert.assertFalse(condition);
+	 }
 
-	protected boolean verifyFalse(boolean condition, boolean halt) {
-		boolean pass = true;
-		if (halt == false) {
-			try {
-				Assert.assertFalse(condition);
-			} catch (Throwable e) {
-				pass = false;
-			}
-		} else {
-			Assert.assertFalse(condition);
-		}
-		return pass;
-
-	}
-
-	protected boolean verifyFalse(boolean condition) {
-		return verifyFalse(condition, false);
-	}
-	
+	 /**
+	  * Verify whether actual result meets expectation
+	  * @param actual
+	  * @param expected
+	  */
+	 protected void verifyEquals(String actual, String expected) {
+	  Assert.assertEquals(actual, expected);
+	 }
+	 
+	 /**
+	  * Verify True with parameter specific the test will be ended or continued
+	  * @param condition
+	  * @param iscontinue continue when test fail true/false
+	  */
+	    protected void verifyTrue(boolean condition, boolean iscontinue)
+	    {
+	        if ( iscontinue == true ) {
+	            try {
+	                Assert.assertTrue(condition);
+	            } catch (Throwable e) {
+	             Assert.fail("Condition is not matched");
+	            }
+	        } else {
+	            Assert.assertTrue(condition);
+	        }
+	    }
+	    
+	 public boolean doesTextDisplay(WebDriver driver, String text) {
+	  String result = driver.findElement(By.tagName("body")).getText();
+	  Boolean check = result.contains(text);
+	  return check;
+	 }
+	 
+	 public boolean doesElementExistByType(WebDriver driver, String type, String item) {
+	  Boolean check = null;
+	  if (type == "link") {
+	   check = driver.findElement(By.linkText(item)).isDisplayed();
+	  }
+	  return check;
+	 }
+	 
+	 public void searchItem(WebDriver driver, String searchtext) {
+	  WebElement txtbox = driver.findElement(By.xpath(interfaces.int_ArticlesPage.filter_textbox));
+	  String a = txtbox.getAttribute("value").toString(); 
+	  if ( !a.equals(searchtext)) {
+	   txtbox.clear();
+	   waitForPageLoad(Config.short_wait_time);
+	   txtbox.sendKeys(searchtext);
+	   driver.findElement(By.xpath(interfaces.int_ArticlesPage.search_button)).click();
+	  }
+	 }
+	 public void waitForPageLoad(long waittime){
+	  try {
+	   Thread.sleep(waittime*1000);
+	  } catch (InterruptedException e) {
+	   e.printStackTrace();
+	  }
+	 }
+	 /**
+	  * @author: TuanNguyen
+	  * @edit by: Giang Nguyen
+	  */
+	 public boolean doesTextPresent(String message){
+	  return doesTextDisplay(driver, message);
+	 }
+	 
+	 public boolean doesitemExist(String item) {
+	  searchItem(driver, item);
+	  return doesElementExistByType(driver, "link", item);
+	 }
 	protected WebElement element;
 }
