@@ -31,7 +31,6 @@ public class TM_JOOMLA_ARTICLE_1to4 extends ac_ArticlePage {
 	
 	@Test
 	public void TC_JOOMLA_ARTICLE_002(){
-		ArticlePage = new ac_ArticlePage(driver);
 		ArticlePage.selectCheckboxItem(driver, title_name);
 		ArticlePage.click(driver, int_ArticlesPage.edit_button);
 		ArticlePage.fillInfoArticle("Test Article", "Sample Data-Articles", null, null, "this is article content", "save & close");

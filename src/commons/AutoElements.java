@@ -29,6 +29,7 @@ public class AutoElements extends commons.Initialize {
 		 element.selectByVisibleText(item);
 	}
 	public void selectCheckboxItem(WebDriver driver, String item) {
+		searchItem(driver, item);
 		driver.findElement(By.xpath("//td[a[contains(text(),'" + item+ "')]]/../td/input[@type='checkbox']")).click();
 	}
 	
