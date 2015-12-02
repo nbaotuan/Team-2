@@ -22,9 +22,11 @@ public class TM_JOOMLA_ARTICLE_1to4 extends ac_ArticlePage {
 	public String arttext = "this is article content";
 	public String arttext_modified = "this is article content modified";
 	public String category = "Sample Data-Articles";
-	public String state = "Unpublished";
-	public String message_publish = "1 article published";
-	public String message_unpublish = "1 article unpublished";
+	public String message_archive = "1 article archived.";
+	public String message_trash = "1 article trashed.";
+	//public String state = "Unpublished";
+	//public String message_publish = "1 article published";
+	//public String message_unpublish = "1 article unpublished";
 	
 	@BeforeClass
 	public void Setup() {
@@ -34,48 +36,68 @@ public class TM_JOOMLA_ARTICLE_1to4 extends ac_ArticlePage {
 	}
 	
 	@Test
+	//Verify user can create new article with valid information
 	public void TC_JOOMLA_ARTICLE_001()
 	{
 		ArticlePage = new ac_ArticlePage(driver);
 		ArticlePage.navigatemenu(driver, "Content", "Article Manager", null);
 		ArticlePage.click(driver, int_ArticlesPage.new_button);
-		ArticlePage.fillInfoArticle(title, category, state, null, arttext, "save & close");
-		//VP
+		ArticlePage.fillInfoArticle(title, category, null, null, arttext, "save & close");
+		/*
+		 * VP
+		 * 1. "Article successfully saved" message is displayed
+		 * 2. Created article is displayed on the articles table
+		 */
 		ArticlePage.checkArticleExist(message_create, title);
 	}
 	
 	@Test
+	//Verify user can edit an article
 	public void TC_JOOMLA_ARTICLE_002()
 	{
 		ArticlePage.selectCheckboxItem(driver, title);
 		ArticlePage.click(driver, int_ArticlesPage.edit_button);
 		ArticlePage.fillInfoArticle(title_modified, category, null, null, arttext_modified, "save & close");
-		//VP
+		/*
+		 * VP
+		 * 1. "Article successfully saved" message is displayed
+		 * 2. Edited article is displayed on the articles table
+		 */
 		ArticlePage.checkArticleExist(message_create, title_modified);
 	}
 	
 	@Test
-	public void TC_JOOMLA_ARTICLE_003()
+	//Verify user can move an article to the archive
+	public void TC_JOOMLA_ARTICLE_005()
 	{
 		ArticlePage.selectCheckboxItem(driver, title_modified);
-		ArticlePage.click(driver, int_ArticlesPage.publish_button);
-		//VP
-		ArticlePage.checkArticlePublishStatus(message_publish, title_modified, "Published");
+		ArticlePage.click(driver, int_ArticlesPage.archive_button);
+		/*
+		 * VP
+		 * 1. The "1 article archived" message is displayed
+		 * 2. The archived article is displayed on the table grid
+		 */
+		ArticlePage.checkArticleArchived(message_archive, title_modified);
 	}
 	
 	@Test
-	public void TC_JOOMLA_ARTICLE_004()
+	//Verify user can move an article to trash section
+	public void TC_JOOMLA_ARTICLE_007()
 	{
 		ArticlePage.selectCheckboxItem(driver, title_modified);
-		ArticlePage.click(driver, int_ArticlesPage.publish_button);
-		//VP
-		ArticlePage.checkArticlePublishStatus(message_unpublish, title_modified, "Unpublished");
+		ArticlePage.click(driver, int_ArticlesPage.trash_button);
+		/*
+		 * VP
+		 * 1. The "1 article successfully trashed" message is displayed
+		 * 2. The deleted article is displayed on the table grid
+		 */
+		ArticlePage.checkArticleTrashed(message_trash, title_modified);
 	}
 	
 	@AfterClass
 	public void teardown(){
 		AdminPage = new ac_AdministratorPage(driver);
 		AdminPage.Logout();		
-		driver.quit();
+		driver.close();
 	}
 }

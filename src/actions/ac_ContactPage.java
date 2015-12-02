@@ -28,18 +28,18 @@ public class ac_ContactPage extends commons.AutoElements {
 	 * @author: GiangNguyen
 	 * @edit by:
 	 */
-	public void fillinfo(String name, String category, String state, String access, String otherinfo){
-		if (name != null)
-			enter(driver, int_NewContPage.name_textbox, name);
-		if (category != null)
-			selectitems(driver, int_NewContPage.category_dropdown, category);
-		if (state != null)
-			selectitems(driver, int_NewContPage.state_dropdown, state);
-		if (access != null)
-			selectitems(driver, int_NewContPage.access_dropdown, access);
-		if (otherinfo != null)
-			switchframe(driver, int_NewContPage.otherinfo_iframe, otherinfo);
-			
-	}
+//	public void fillinfo(String name, String category, String state, String access, String otherinfo){
+//		if (name != null)
+//			enter(driver, int_NewContPage.name_textbox, name);
+//		if (category != null)
+//			selectitems(driver, int_NewContPage.category_dropdown, category);
+//		if (state != null)
+//			selectitems(driver, int_NewContPage.state_dropdown, state);
+//		if (access != null)
+//			selectitems(driver, int_NewContPage.access_dropdown, access);
+//		if (otherinfo != null)
+//			switchframe(driver, int_NewContPage.otherinfo_iframe, otherinfo);
+//			
+//	}
 
 }
