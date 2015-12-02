@@ -9,7 +9,7 @@ import actions.ac_LoginPage;
 import commons.Config;
 import interfaces.int_ArticlesPage;
 
-public class TM_JOOMLA_ARTICLE_1to4 extends ac_ArticlePage {
+public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 	
 	private WebDriver driver;
 	private ac_LoginPage LoginPage;	

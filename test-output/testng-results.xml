@@ -2,36 +2,36 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="46976" started-at="2015-12-02T13:18:09Z" finished-at="2015-12-02T13:18:56Z">
+  <suite name="Default suite" duration-ms="50517" started-at="2015-12-02T13:20:37Z" finished-at="2015-12-02T13:21:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="46976" started-at="2015-12-02T13:18:09Z" finished-at="2015-12-02T13:18:56Z">
-      <class name="testsuite_Articles.TM_JOOMLA_ARTICLE_1to4">
-        <test-method status="PASS" signature="Setup()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to4@203ea1]" name="Setup" is-config="true" duration-ms="20754" started-at="2015-12-02T20:18:09Z" finished-at="2015-12-02T20:18:30Z">
+    <test name="Default test" duration-ms="50517" started-at="2015-12-02T13:20:37Z" finished-at="2015-12-02T13:21:27Z">
+      <class name="testsuite_Articles.TM_JOOMLA_ARTICLE_1to8">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@203ea1]" name="Setup" is-config="true" duration-ms="21233" started-at="2015-12-02T20:20:37Z" finished-at="2015-12-02T20:20:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_001()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to4@203ea1]" name="TC_JOOMLA_ARTICLE_001" duration-ms="9739" started-at="2015-12-02T20:18:30Z" finished-at="2015-12-02T20:18:39Z">
+        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_001()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@203ea1]" name="TC_JOOMLA_ARTICLE_001" duration-ms="9943" started-at="2015-12-02T20:20:58Z" finished-at="2015-12-02T20:21:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_JOOMLA_ARTICLE_001 -->
-        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_002()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to4@203ea1]" name="TC_JOOMLA_ARTICLE_002" duration-ms="6960" started-at="2015-12-02T20:18:39Z" finished-at="2015-12-02T20:18:46Z">
+        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_002()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@203ea1]" name="TC_JOOMLA_ARTICLE_002" duration-ms="9093" started-at="2015-12-02T20:21:08Z" finished-at="2015-12-02T20:21:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_JOOMLA_ARTICLE_002 -->
-        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_005()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to4@203ea1]" name="TC_JOOMLA_ARTICLE_005" duration-ms="2842" started-at="2015-12-02T20:18:46Z" finished-at="2015-12-02T20:18:49Z">
+        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_005()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@203ea1]" name="TC_JOOMLA_ARTICLE_005" duration-ms="3544" started-at="2015-12-02T20:21:17Z" finished-at="2015-12-02T20:21:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_JOOMLA_ARTICLE_005 -->
-        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_007()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to4@203ea1]" name="TC_JOOMLA_ARTICLE_007" duration-ms="5773" started-at="2015-12-02T20:18:49Z" finished-at="2015-12-02T20:18:55Z">
+        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_007()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@203ea1]" name="TC_JOOMLA_ARTICLE_007" duration-ms="5676" started-at="2015-12-02T20:21:21Z" finished-at="2015-12-02T20:21:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_JOOMLA_ARTICLE_007 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to4@203ea1]" name="teardown" is-config="true" duration-ms="862" started-at="2015-12-02T20:18:55Z" finished-at="2015-12-02T20:18:56Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@203ea1]" name="teardown" is-config="true" duration-ms="1012" started-at="2015-12-02T20:21:26Z" finished-at="2015-12-02T20:21:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- testsuite_Articles.TM_JOOMLA_ARTICLE_1to4 -->
+      </class> <!-- testsuite_Articles.TM_JOOMLA_ARTICLE_1to8 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
