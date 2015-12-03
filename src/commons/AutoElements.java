@@ -58,16 +58,21 @@ public class AutoElements extends commons.Initialize {
 
 		return basestring + day + month + year + second + minute + hour;
 	}
-	
-	public void switchframe (WebDriver driver,String control, String framecontrol, String value)
-	{
+	/**
+	 * @author: Tuan Nguyen
+	 * @edit by: Giang Nguyen
+	 */
+	public void switchToFrame (WebDriver driver, String control){
 		WebElement bodyIframe = findAnElement (driver, control);
-		driver.switchTo().frame(bodyIframe);
-		element = findAnElement(driver, framecontrol);
-		element.sendKeys(value);
+		driver.switchTo().frame(bodyIframe);	
+	}
+	/**
+	 * @author: Giang Nguyen
+	 * @edit by: 
+	 */
+	public void switchBackDefaultframe (WebDriver driver){
 		driver.switchTo().defaultContent();		
 	}
-	
 	/**
 	 * @author: Giang Nguyen
 	 * @edit by: 

@@ -27,7 +27,9 @@ public class ac_ArticlePage extends commons.AutoElements {
 	 * @edit by: Giang Nguyen
 	 */
 	public void fillInfoArticle(String name, String category, String state, String access, String arttext, String saveoption){
+		//click(driver, int_ArticlesPage.new_button);
 		if (name != null)
+			//driver.findElement(By.xpath(int_NewArtPage.title_texbox)).clear();
 			clearText(driver, int_NewArtPage.title_texbox);
 			enter(driver, int_NewArtPage.title_texbox, name);
 		if (category != null)
@@ -37,7 +39,9 @@ public class ac_ArticlePage extends commons.AutoElements {
 		if (access != null)
 			selectitems(driver, int_NewArtPage.access_dropdown, access);
 		if (arttext != null)
-			switchframe(driver, int_NewArtPage.arttext_frame_textbox, int_NewArtPage.body_frame_textbox, arttext);
+			switchToFrame(driver, int_NewArtPage.arttext_frame_textbox);
+			enter(driver, int_NewArtPage.body_frame_textbox, arttext);
+			switchBackDefaultframe(driver);
 		if (saveoption == "save")
 			click(driver, int_NewArtPage.save_button);
 		else if (saveoption == "save & close")
