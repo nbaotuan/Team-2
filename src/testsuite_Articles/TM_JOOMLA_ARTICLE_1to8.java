@@ -24,9 +24,10 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 	public String category = "Sample Data-Articles";
 	public String message_archive = "1 article archived.";
 	public String message_trash = "1 article trashed.";
-	//public String state = "Unpublished";
-	//public String message_publish = "1 article published";
-	//public String message_unpublish = "1 article unpublished";
+	public String state_unpublish = "Unpublished";
+	public String state_publish = "Published";
+	public String message_publish = "1 article published.";
+	public String message_unpublish = "1 article unpublished.";
 	
 	@BeforeClass
 	public void Setup() {
@@ -51,13 +52,14 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		ArticlePage.checkArticleExist(message_create, title);
 	}
 	
-	@Test
+	//@Test
 	//Verify user can edit an article
 	public void TC_JOOMLA_ARTICLE_002()
 	{
 		ArticlePage.selectCheckboxItem(driver, title);
 		ArticlePage.click(driver, int_ArticlesPage.edit_button);
 		ArticlePage.fillInfoArticle(title_modified, category, null, null, arttext_modified, "save & close");
+		
 		/*
 		 * VP
 		 * 1. "Article successfully saved" message is displayed
@@ -65,8 +67,41 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		 */
 		ArticlePage.checkArticleExist(message_create, title_modified);
 	}
-	
+	/*
+	 *Tuan nguyen 12-03	 
+	 *Verify user can publish an unpublished article				
+	 */
 	@Test
+	public void TC_JOOMLA_ARTICLE_003()
+	{
+		ArticlePage.click(driver, int_ArticlesPage.new_button);
+		ArticlePage.fillInfoArticle(title_modified, category, state_unpublish, null, arttext_modified, "save & close");
+		ArticlePage.selectToolbarButtons(title_modified, interfaces.int_AdminstratorPage.toolbar_unpublish);
+		/*
+		 * VP
+		 * 1. "Article successfully saved" message is displayed
+		 * 2. Verify the article is published successfully
+		 */		
+		ArticlePage.checkArticleExist(message_publish, title_modified);
+		
+	}
+	/*
+	 *Tuan nguyen 12-03	 
+	 *Verify user can publish an unpublished article				
+	 */
+	//@Test
+	public void TC_JOOMLA_ARTICLE_004()
+	{
+		ArticlePage.selectToolbarButtons(title_modified, interfaces.int_AdminstratorPage.toolbar_publish);
+		/*
+		 * VP
+		 * 1. "Article successfully saved" message is displayed
+		 * 2. Verify the article is unpublished successfully
+		 */
+		ArticlePage.checkArticleExist(message_unpublish, title_modified);
+	}
+	
+	//@Test
 	//Verify user can move an article to the archive
 	public void TC_JOOMLA_ARTICLE_005()
 	{
@@ -80,7 +115,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		ArticlePage.checkArticleArchived(message_archive, title_modified);
 	}
 	
-	@Test
+	//@Test
 	//Verify user can move an article to trash section
 	public void TC_JOOMLA_ARTICLE_007()
 	{

@@ -22,6 +22,7 @@ public class int_ArticlesPage {
 	
 	public static final String row_checkbox = "//a[contains(text(),'%s')]/../preceding-sibling::td/input";
 	public static final String article_link = "//a[contains(text(),'%s')]";
+	public static final String message_header = "//dl[@id='system-message']";
 	
 	
 	

@@ -1,7 +1,10 @@
 package actions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
+import commons.Config;
 import interfaces.int_ArticlesPage;
 import interfaces.int_NewArtPage;
 
@@ -32,12 +35,21 @@ public class ac_ArticlePage extends commons.AutoElements {
 			//driver.findElement(By.xpath(int_NewArtPage.title_texbox)).clear();
 			clearText(driver, int_NewArtPage.title_texbox);
 			enter(driver, int_NewArtPage.title_texbox, name);
-		if (category != null)
+		if (category != null){
 			selectitems(driver, int_NewArtPage.category_dropdown, category);
-		if (state != null)
+			//Select select_category = new Select (driver.findElement(By.xpath(int_NewArtPage.category_dropdown)));
+			//select_category.selectByVisibleText(category);
+		}
+		if (state != null){
 			selectitems(driver, int_NewArtPage.status_dropdown, state);
-		if (access != null)
+			//Select select_state = new Select (driver.findElement(By.xpath(int_NewArtPage.status_dropdown)));
+		    //select_state.selectByVisibleText(state);
+		}			
+		if (access != null){
 			selectitems(driver, int_NewArtPage.access_dropdown, access);
+			//Select select_access = new Select (driver.findElement(By.xpath(int_NewArtPage.access_dropdown)));
+			//select_access.selectByVisibleText(access);
+		}
 		if (arttext != null)
 			switchToFrame(driver, int_NewArtPage.arttext_frame_textbox);
 			enter(driver, int_NewArtPage.body_frame_textbox, arttext);
@@ -90,6 +102,17 @@ public class ac_ArticlePage extends commons.AutoElements {
 		clearText(driver, int_ArticlesPage.filter_textbox);
 		selectitems(driver, int_ArticlesPage.state_filter_dropdown, "Trash");
 		verifyTrue(doesitemExist(driver, title));
+	}
+	/**
+	 * @author: Tuan Nguyen
+	 * @edit by: 
+	 */	
+	public ac_ArticlePage selectToolbarButtons(String itemName, String button){
+		selectToobarButton(driver, itemName, button);
+		if (button =="publish"||button =="unpublish"||button =="archive"||button =="checkin"||button =="trash"){
+			waitForControl(driver, int_ArticlesPage.message_header, Config.short_wait_time*10);
+		}
+		return this;
 	}
 	
 	private WebDriver driver;

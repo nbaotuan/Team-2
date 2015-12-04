@@ -6,7 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 import org.testng.Assert;
 
 public class AutoElements extends commons.Initialize {
@@ -210,5 +213,36 @@ public class AutoElements extends commons.Initialize {
 		 Boolean check = result.contains(status);
 		 return check;
 	 }
+	 /**
+	  * @author: Tuan Nguyen 12-03
+	  * @edit by: 
+	  */
+	 public void waitForControl(WebDriver driver, String messageHeader, long timeout)
+		{
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, timeout);
+				wait.until(ExpectedConditions.elementToBeClickable((By) driver.findElement(By.xpath(messageHeader))));
+			} catch (Exception e) {
+				Reporter.log("Element doesn't exist");
+			}
+		}
+	 /**
+	  * @author: Tuan Nguyen 12-03
+	  * @edit by: 
+	  */
+		public void selectToobarButton(WebDriver driver, String itemName, String button) {
+			searchItem(driver, itemName);
+			selectCheckboxItem(driver, itemName);
+			clickToolbarButton(driver, button);
+		}
+		 /**
+		  * @author: Tuan Nguyen 12-03
+		  * @edit by: 
+		  */
+		public void clickToolbarButton(WebDriver driver, String button) {
+			driver.findElement(By.xpath("//li[@id='toolbar-" + button + "']/a/span")).click();
+			waitForPageLoad(Config.short_wait_time/2);
+		}
+
 	protected WebElement element;
 }

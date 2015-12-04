@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testsuite_Articles.test">
+      <class name="testsuite_Articles.TM_JOOMLA_ARTICLE_1to8">
         <methods>
           <include name="Setup"/>
-          <include name="TC01_Verify_Login"/>
+          <include name="teardown"/>
+          <include name="TC_JOOMLA_ARTICLE_003"/>
         </methods>
-      </class> <!-- testsuite_Articles.test -->
+      </class> <!-- testsuite_Articles.TM_JOOMLA_ARTICLE_1to8 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
