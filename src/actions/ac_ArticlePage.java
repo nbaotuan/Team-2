@@ -1,5 +1,6 @@
 package actions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import commons.Config;
@@ -50,6 +51,7 @@ public class ac_ArticlePage extends commons.AutoElements {
 		}
 		if (arttext != null)
 			switchToFrame(driver, int_NewArtPage.arttext_frame_textbox);
+			driver.findElement(By.xpath(int_NewArtPage.body_frame_textbox)).clear();
 			enter(driver, int_NewArtPage.body_frame_textbox, arttext);
 			switchBackDefaultframe(driver);
 		if (saveoption == "save")
