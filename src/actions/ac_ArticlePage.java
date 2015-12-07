@@ -2,7 +2,6 @@ package actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import commons.Config;
 import interfaces.int_ArticlesPage;
@@ -80,7 +79,10 @@ public class ac_ArticlePage extends commons.AutoElements {
 	public void checkArticlePublishStatus(String message, String title, String status)
 	{
 		verifyTrue(doesTextPresent(driver, message));
-		verifyTrue(doesitemPublish(driver, title, status));
+		element = driver.findElement(By.xpath(String.format(int_ArticlesPage.publish_status_icon, title)));
+		String a = element.getAttribute("class");
+		System.out.println(a);
+		verifyTrue(getitemPublishStatus(driver, int_ArticlesPage.publish_status_icon, title).equals(status));
 	}
 	/**
 	 * @author: Giang Nguyen

@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="0" failed="1" total="3" passed="2">
   <reporter-output>
     <line>
       <![CDATA[Element doesn't exist]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33977" started-at="2015-12-04T04:38:03Z" finished-at="2015-12-04T04:38:37Z">
+  <suite name="Default suite" duration-ms="47343" started-at="2015-12-07T08:31:16Z" finished-at="2015-12-07T08:32:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33977" started-at="2015-12-04T04:38:03Z" finished-at="2015-12-04T04:38:37Z">
+    <test name="Default test" duration-ms="47343" started-at="2015-12-07T08:31:16Z" finished-at="2015-12-07T08:32:04Z">
       <class name="testsuite_Articles.TM_JOOMLA_ARTICLE_1to8">
-        <test-method status="PASS" signature="Setup()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@56cbfb61]" name="Setup" is-config="true" duration-ms="6842" started-at="2015-12-04T11:38:03Z" finished-at="2015-12-04T11:38:10Z">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc]" name="Setup" is-config="true" duration-ms="19723" started-at="2015-12-07T15:31:16Z" finished-at="2015-12-07T15:31:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_001()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@56cbfb61]" name="TC_JOOMLA_ARTICLE_001" duration-ms="13135" started-at="2015-12-04T11:38:10Z" finished-at="2015-12-04T11:38:23Z">
+        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_001()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc]" name="TC_JOOMLA_ARTICLE_001" duration-ms="16247" started-at="2015-12-07T15:31:36Z" finished-at="2015-12-07T15:31:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_JOOMLA_ARTICLE_001 -->
-        <test-method status="FAIL" signature="TC_JOOMLA_ARTICLE_003()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@56cbfb61]" name="TC_JOOMLA_ARTICLE_003" duration-ms="13382" started-at="2015-12-04T11:38:23Z" finished-at="2015-12-04T11:38:37Z">
+        <test-method status="PASS" signature="TC_JOOMLA_ARTICLE_002()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc]" name="TC_JOOMLA_ARTICLE_002" duration-ms="7489" started-at="2015-12-07T15:31:52Z" finished-at="2015-12-07T15:32:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_JOOMLA_ARTICLE_002 -->
+        <test-method status="FAIL" signature="TC_JOOMLA_ARTICLE_003()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc]" name="TC_JOOMLA_ARTICLE_003" duration-ms="2846" started-at="2015-12-07T15:32:00Z" finished-at="2015-12-07T15:32:03Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -30,7 +34,7 @@
 	at org.testng.Assert.assertTrue(Assert.java:42)
 	at org.testng.Assert.assertTrue(Assert.java:52)
 	at commons.AutoElements.verifyTrue(AutoElements.java:114)
-	at actions.ac_ArticlePage.checkArticleExist(ac_ArticlePage.java:73)
+	at actions.ac_ArticlePage.checkArticlePublishStatus(ac_ArticlePage.java:82)
 	at testsuite_Articles.TM_JOOMLA_ARTICLE_1to8.TC_JOOMLA_ARTICLE_003(TM_JOOMLA_ARTICLE_1to8.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -65,7 +69,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- TC_JOOMLA_ARTICLE_003 -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@56cbfb61]" name="teardown" is-config="true" duration-ms="604" started-at="2015-12-04T11:38:37Z" finished-at="2015-12-04T11:38:37Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc]" name="teardown" is-config="true" duration-ms="1012" started-at="2015-12-07T15:32:03Z" finished-at="2015-12-07T15:32:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

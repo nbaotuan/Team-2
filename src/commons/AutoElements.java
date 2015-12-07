@@ -203,15 +203,10 @@ public class AutoElements extends commons.Initialize {
 	  * @author: Giang Nguyen
 	  * @edit by: 
 	  */
-	 public boolean doesitemPublish(WebDriver driver, String item, String status)
+	 public String getitemPublishStatus(WebDriver driver, String control, String title)
 	 {
-		 String xpath =  "//td[a[contains(text(),'" + item + "')]]/../td/a/span/span[contains(text(),'"+ status +"')]";
-		 //String.format("//li[contains(text(),'%s')]", text);
-		 //WebElement result = driver.findElement(By.xpath(xtext));
-		 WebElement temp = driver.findElement(By.xpath(xpath));
-		 String result = temp.getText();
-		 Boolean check = result.contains(status);
-		 return check;
+		 element = driver.findElement(By.xpath(String.format(control, title)));
+		 return element.getAttribute("class");
 	 }
 	 /**
 	  * @author: Tuan Nguyen 12-03
@@ -231,7 +226,7 @@ public class AutoElements extends commons.Initialize {
 	  * @edit by: 
 	  */
 		public void selectToobarButton(WebDriver driver, String itemName, String button) {
-			searchItem(driver, itemName);
+			//searchItem(driver, itemName);
 			selectCheckboxItem(driver, itemName);
 			clickToolbarButton(driver, button);
 		}

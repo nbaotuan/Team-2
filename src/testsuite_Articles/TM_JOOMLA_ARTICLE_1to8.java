@@ -7,6 +7,7 @@ import actions.ac_AdministratorPage;
 import actions.ac_ArticlePage;
 import actions.ac_LoginPage;
 import commons.Config;
+import interfaces.int_AdminstratorPage;
 import interfaces.int_ArticlesPage;
 
 public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
@@ -74,15 +75,15 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 	@Test
 	public void TC_JOOMLA_ARTICLE_003()
 	{
-		ArticlePage.click(driver, int_ArticlesPage.new_button);
-		ArticlePage.fillInfoArticle(title_modified, category, state_unpublish, null, arttext_modified, "save & close");
-		ArticlePage.selectToolbarButtons(title_modified, interfaces.int_AdminstratorPage.toolbar_unpublish);
+		//ArticlePage.click(driver, int_ArticlesPage.new_button);
+		//ArticlePage.fillInfoArticle(title_modified, category, state_unpublish, null, arttext_modified, "save & close");
+		ArticlePage.selectToolbarButtons(title, int_AdminstratorPage.toolbar_unpublish);
 		/*
 		 * VP
 		 * 1. "Article successfully saved" message is displayed
 		 * 2. Verify the article is published successfully
 		 */		
-		ArticlePage.checkArticleExist(message_publish, title_modified);
+		ArticlePage.checkArticlePublishStatus(message_publish, title, "state unpublish");
 		
 	}
 	/*
@@ -98,7 +99,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		 * 1. "Article successfully saved" message is displayed
 		 * 2. Verify the article is unpublished successfully
 		 */
-		ArticlePage.checkArticleExist(message_unpublish, title_modified);
+		ArticlePage.checkArticlePublishStatus(message_publish, title_modified, "state unpublish");
 	}
 	
 	//@Test

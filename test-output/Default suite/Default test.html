@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 04 11:38:03 ICT 2015</td>
+<td>Started on:</td><td>Mon Dec 07 15:31:16 ICT 2015</td>
 </tr>
-<tr><td>Total time:</td><td>33 seconds (33977 ms)</td>
+<tr><td>Total time:</td><td>47 seconds (47343 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,10 +76,10 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='testsuite_Articles.TM_JOOMLA_ARTICLE_1to8.TC_JOOMLA_ARTICLE_003()'><b>TC_JOOMLA_ARTICLE_003</b><br>Test class: testsuite_Articles.TM_JOOMLA_ARTICLE_1to8<br/>
-<a href="#Output-746074699" onClick='toggleBox("Output-746074699", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-33476081" onClick='toggleBox("Output-33476081", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-746074699" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-746074699">
+<a href="#Output-33476081" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-33476081">
 Element doesn't exist<br/>
 </div>
 </td>
@@ -89,7 +89,7 @@ Element doesn't exist<br/>
 	at org.testng.Assert.assertTrue(Assert.java:42)
 	at org.testng.Assert.assertTrue(Assert.java:52)
 	at commons.AutoElements.verifyTrue(AutoElements.java:114)
-	at actions.ac_ArticlePage.checkArticleExist(ac_ArticlePage.java:73)
+	at actions.ac_ArticlePage.checkArticlePublishStatus(ac_ArticlePage.java:82)
 	at testsuite_Articles.TM_JOOMLA_ARTICLE_1to8.TC_JOOMLA_ARTICLE_003(TM_JOOMLA_ARTICLE_1to8.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -115,14 +115,14 @@ Element doesn't exist<br/>
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace746074699", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace746074699'><pre>java.lang.AssertionError: expected [true] but found [false]
+</pre></div><a href='#' onClick='toggleBox("stack-trace33476081", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace33476081'><pre>java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:496)
 	at org.testng.Assert.assertTrue(Assert.java:42)
 	at org.testng.Assert.assertTrue(Assert.java:52)
 	at commons.AutoElements.verifyTrue(AutoElements.java:114)
-	at actions.ac_ArticlePage.checkArticleExist(ac_ArticlePage.java:73)
+	at actions.ac_ArticlePage.checkArticlePublishStatus(ac_ArticlePage.java:82)
 	at testsuite_Articles.TM_JOOMLA_ARTICLE_1to8.TC_JOOMLA_ARTICLE_003(TM_JOOMLA_ARTICLE_1to8.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -149,8 +149,8 @@ Element doesn't exist<br/>
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 </pre></div></td>
-<td>13</td>
-<td>testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@56cbfb61</td></tr>
+<td>2</td>
+<td>testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -162,8 +162,13 @@ Element doesn't exist<br/>
 <tr>
 <td title='testsuite_Articles.TM_JOOMLA_ARTICLE_1to8.TC_JOOMLA_ARTICLE_001()'><b>TC_JOOMLA_ARTICLE_001</b><br>Test class: testsuite_Articles.TM_JOOMLA_ARTICLE_1to8</td>
 <td></td>
-<td>13</td>
-<td>testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@56cbfb61</td></tr>
+<td>16</td>
+<td>testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc</td></tr>
+<tr>
+<td title='testsuite_Articles.TM_JOOMLA_ARTICLE_1to8.TC_JOOMLA_ARTICLE_002()'><b>TC_JOOMLA_ARTICLE_002</b><br>Test class: testsuite_Articles.TM_JOOMLA_ARTICLE_1to8</td>
+<td></td>
+<td>7</td>
+<td>testsuite_Articles.TM_JOOMLA_ARTICLE_1to8@1f50bcc</td></tr>
 </table><p>
 </body>
 </html>
