@@ -101,6 +101,11 @@ public class ac_ArticlePage extends commons.AutoElements {
 		selectitems(driver, int_ArticlesPage.state_filter_dropdown, "Trash");
 		verifyTrue(doesitemExist(driver, title));
 	}
+	public void checkArticleIsPublic(String title, String access)
+	{
+		verifyTrue(getitemAccessStatus(driver, int_ArticlesPage.access_status, title).contains(access));
+	}
+	
 	/**
 	 * @author: Tuan Nguyen
 	 * @edit by: 

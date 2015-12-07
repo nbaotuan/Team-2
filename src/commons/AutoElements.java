@@ -218,6 +218,16 @@ public class AutoElements extends commons.Initialize {
 		 return element.getAttribute("class");
 	 }
 	 /**
+	  * @author: Giang Nguyen 12-07
+	  * @edit by: 
+	  */
+	 public String getitemAccessStatus(WebDriver driver, String control, String title)
+	 {
+		 element = driver.findElement(By.xpath(String.format(control, title)));
+		 return element.getText();
+	 }
+	 
+	 /**
 	  * @author: Tuan Nguyen 12-03
 	  * @edit by: 
 	  */
@@ -246,6 +256,15 @@ public class AutoElements extends commons.Initialize {
 		public void clickToolbarButton(WebDriver driver, String button) {
 			driver.findElement(By.xpath("//li[@id='toolbar-" + button + "']/a/span")).click();
 			waitForPageLoad(Config.short_wait_time/2);
+		}
+		/**
+		  * @author: Giang Nguyen 12-07
+		  * @edit by: 
+		  */
+		public void clickStatusIconInTheList(WebDriver driver, String title, String control)
+		{
+			element = driver.findElement(By.xpath(String.format(control, title)));
+			element.click();
 		}
 
 	protected WebElement element;

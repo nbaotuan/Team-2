@@ -8,7 +8,6 @@
           <include name="TC_JOOMLA_ARTICLE_001"/>
           <include name="Setup"/>
           <include name="teardown"/>
-          <include name="TC_JOOMLA_ARTICLE_003"/>
         </methods>
       </class> <!-- testsuite_Articles.TM_JOOMLA_ARTICLE_1to8 -->
     </classes>

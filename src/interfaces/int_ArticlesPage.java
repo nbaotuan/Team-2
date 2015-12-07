@@ -24,6 +24,6 @@ public class int_ArticlesPage {
 	public static final String article_link = "//a[contains(text(),'%s')]";
 	public static final String message_header = "//dl[@id='system-message']";
 	public static final String publish_status_icon = "//a[contains(text(),'%s')]/../following-sibling::td[1]/a/span";
-	
+	public static final String access_status = "//a[contains(text(),'%s')]/../following-sibling::td[5]";
 	
 }
