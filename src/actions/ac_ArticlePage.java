@@ -100,7 +100,7 @@ public class ac_ArticlePage extends commons.AutoElements {
 	{
 		verifyTrue(doesTextPresent(driver, message));
 		clearText(driver, int_ArticlesPage.filter_textbox);
-		selectitems(driver, int_ArticlesPage.state_filter_dropdown, "Trash");
+		selectitems(driver, int_ArticlesPage.state_filter_dropdown, "Trashed");
 		verifyTrue(doesitemExist(driver, title));
 	}
 	public void checkArticleIsPublic(String title, String access)
