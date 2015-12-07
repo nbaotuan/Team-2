@@ -22,7 +22,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 	public String message_create = "Article successfully saved";
 	public String arttext = "this is article content";
 	public String arttext_modified = "this is article content modified";
-	public String category = "Sample Data-Articles";
+	public String category = "- Sample Data-Articles";
 	public String message_archive = "1 article archived.";
 	public String message_trash = "1 article trashed.";
 	public String state_unpublish = "Unpublished";
@@ -71,7 +71,8 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		ArticlePage.checkArticleExist(message_create, title_modified);
 	}
 	/*
-	 *Tuan nguyen 12-03	 
+	 *Create by:Tuan nguyen 12-03
+	 *Edit by: Hang Tran
 	 *Verify user can publish an unpublished article				
 	 */
 	@Test
@@ -79,29 +80,30 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 	{
 		//ArticlePage.click(driver, int_ArticlesPage.new_button);
 		//ArticlePage.fillInfoArticle(title_modified, category, state_unpublish, null, arttext_modified, "save & close");
-		ArticlePage.selectToolbarButtons(title_modified, int_AdminstratorPage.toolbar_unpublish);
+		ArticlePage.selectToolbarButtons(title_modified, int_AdminstratorPage.toolbar_publish);
 		/*
 		 * VP
 		 * 1. "Article successfully saved" message is displayed
 		 * 2. Verify the article is published successfully
 		 */		
-		ArticlePage.checkArticlePublishStatus(message_unpublish, title, "state unpublish");
+		ArticlePage.checkArticlePublishStatus(message_publish, title_modified, "state publish");
 		
 	}
 	/*
-	 *Tuan nguyen 12-03	 
-	 *Verify user can publish an unpublished article				
+	 *Create by:Tuan nguyen 12-03
+	 *Edit by: Hang Tran	 
+	 *Verify user can upublish an published article				
 	 */
 	@Test
 	public void TC_JOOMLA_ARTICLE_004()
 	{
-		ArticlePage.selectToolbarButtons(title_modified, int_AdminstratorPage.toolbar_publish);
+		ArticlePage.selectToolbarButtons(title_modified, int_AdminstratorPage.toolbar_unpublish);
 		/*
 		 * VP
 		 * 1. "Article successfully saved" message is displayed
 		 * 2. Verify the article is unpublished successfully
 		 */
-		ArticlePage.checkArticlePublishStatus(message_publish, title_modified, "state publish");
+		ArticlePage.checkArticlePublishStatus(message_unpublish, title_modified, "state unpublish");
 	}
 	
 	@Test
@@ -118,7 +120,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		ArticlePage.checkArticleArchived(message_archive, title_modified);
 	}
 	
-	@Test
+//	@Test
 	//Verify user can move an article to trash section
 	public void TC_JOOMLA_ARTICLE_007()
 	{
@@ -131,7 +133,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		 */
 		ArticlePage.checkArticleTrashed(message_trash, title_modified);
 	}
-	//@Test
+//	@Test
 		//Verify user can change the status of articles using the Status column
 		public void TC_JOOMLA_ARTICLE_015()
 		{
@@ -154,7 +156,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 			ArticlePage.checkArticlePublishStatus(message_publish, title, "state publish");
 		}
 		
-		@Test
+//		@Test
 		//Verify user can create a new article with 'Public' Access Level property
 		public void TC_JOOMLA_ARTICLE_017()
 		{
