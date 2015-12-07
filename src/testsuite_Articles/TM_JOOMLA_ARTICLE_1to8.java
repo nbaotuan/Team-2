@@ -120,7 +120,8 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		ArticlePage.checkArticleArchived(message_archive, title_modified);
 	}
 	
-//	@Test
+	
+	@Test
 	//Verify user can move an article to trash section
 	public void TC_JOOMLA_ARTICLE_007()
 	{
@@ -133,6 +134,8 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		 */
 		ArticlePage.checkArticleTrashed(message_trash, title_modified);
 	}
+	
+	
 //	@Test
 		//Verify user can change the status of articles using the Status column
 		public void TC_JOOMLA_ARTICLE_015()
@@ -141,7 +144,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 			ArticlePage.clickStatusIconInTheList(driver, title, int_ArticlesPage.publish_status_icon);
 			/*
 			 * VP
-			 * 1. The icon of the selected item is showed as 'Unpublish'. 
+			 * 1. The icon of the selected item is showed as 'unpublish'. 
 			 * 2. The "1 article unpublished" message is displayed
 			 */
 			ArticlePage.checkArticlePublishStatus(message_unpublish, title, "state unpublish");
