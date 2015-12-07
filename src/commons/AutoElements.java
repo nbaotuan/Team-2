@@ -189,9 +189,10 @@ public class AutoElements extends commons.Initialize {
 	 {
 		 try {
 				element = driver.findElement(By.xpath(String.format(control, message)));
-				String temp = element.getText();
-				boolean check = temp.contains(message);
-				return check;  
+//				String temp = element.getText();
+//				boolean check = temp.contains(message);
+//				return check;  
+				return element.isDisplayed();
 			} 
 			catch (Exception e) {
 				   return false;
