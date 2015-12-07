@@ -26,7 +26,7 @@ public class ac_ArticlePage extends commons.AutoElements {
 	}
 	/**
 	 * @author: TuanNguyen
-	 * @edit by: Giang Nguyen
+	 * @edit by: Giang Nguyen, Hang Tran
 	 */
 	public void fillInfoArticle(String name, String category, String state, String access, String arttext, String saveoption){
 		//click(driver, int_ArticlesPage.new_button);
