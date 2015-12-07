@@ -3,7 +3,7 @@ package interfaces;
 public class int_AdminstratorPage {	
 	public static final String logout_icon = "//span[@class='logout']";
 	public static final String mainmenu="//ul[@id='menu']";
-	
+	public static final String messageDynamic = "//li[contains(text(),'%s')]";
 	// Toolbar
 	public static final String toolbar_new = "new";
 	public static final String toolbar_edit = "edit";
@@ -20,5 +20,6 @@ public class int_AdminstratorPage {
 	public static final String toolbar_cancel = "cancel";
 	public static final String toolbar_option = "popup-options";
 	public static final String toolbar_help = "help";
+	
 	
 }

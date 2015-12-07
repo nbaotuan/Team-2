@@ -83,7 +83,7 @@ public class TM_JOOMLA_ARTICLE_1to8 extends ac_ArticlePage {
 		 * 1. "Article successfully saved" message is displayed
 		 * 2. Verify the article is published successfully
 		 */		
-		ArticlePage.checkArticlePublishStatus(message_publish, title, "state unpublish");
+		ArticlePage.checkArticlePublishStatus(message_unpublish, title, "state unpublish");
 		
 	}
 	/*

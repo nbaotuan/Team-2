@@ -10,6 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
+
+import interfaces.int_AdminstratorPage;
+
 import org.testng.Assert;
 
 public class AutoElements extends commons.Initialize {
@@ -150,13 +153,6 @@ public class AutoElements extends commons.Initialize {
 	            Assert.assertTrue(condition);
 	        }
 	    }
-	    
-	 public boolean doesTextDisplay(WebDriver driver, String text)
-	 {
-		 String result = driver.findElement(By.tagName("body")).getText();
-		 Boolean check = result.contains(text);
-		 return check;
-	 }
 	 
 	 public boolean doesElementExistByType(WebDriver driver, String type, String item) 
 	 {
@@ -189,9 +185,21 @@ public class AutoElements extends commons.Initialize {
 	  * @author: TuanNguyen
 	  * @edit by: Giang Nguyen, Hang Tran
 	  */
-	 public boolean doesTextPresent(WebDriver driver, String message)
+	 public boolean doesTextDisplay(WebDriver driver, String control, String message)
 	 {
-		 return doesTextDisplay(driver, message);
+		 try {
+				element = driver.findElement(By.xpath(String.format(control, message)));
+				String temp = element.getText();
+				boolean check = temp.contains(message);
+				return check;  
+			} 
+			catch (Exception e) {
+				   return false;
+			}
+	 }
+	 public boolean doesTextPresent(WebDriver driver, String expectedMessage)
+	 {
+		 return doesTextDisplay(driver, int_AdminstratorPage.messageDynamic, expectedMessage);
 	 }
 	 
 	 public boolean doesitemExist(WebDriver driver, String item)
