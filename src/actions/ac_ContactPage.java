@@ -2,22 +2,17 @@ package actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
 import interfaces.*;
-import org.openqa.selenium.WebElement;
 
 public class ac_ContactPage extends commons.AutoElements {
 	private WebDriver driver;
 	
+	public ac_ContactPage() {
+		// TODO Auto-generated constructor stub
+	}
 	public ac_ContactPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
-	}
-	
-	public ac_ContactPage() {
-		// TODO Auto-generated constructor stub
-		//this.driver = driver;
 	}
 	
 //	public ac_ContactPage getContactPage(WebDriver driver)
@@ -28,18 +23,25 @@ public class ac_ContactPage extends commons.AutoElements {
 	 * @author: GiangNguyen
 	 * @edit by:
 	 */
-//	public void fillinfo(String name, String category, String state, String access, String otherinfo){
-//		if (name != null)
-//			enter(driver, int_NewContPage.name_textbox, name);
-//		if (category != null)
-//			selectitems(driver, int_NewContPage.category_dropdown, category);
-//		if (state != null)
-//			selectitems(driver, int_NewContPage.state_dropdown, state);
-//		if (access != null)
-//			selectitems(driver, int_NewContPage.access_dropdown, access);
-//		if (otherinfo != null)
-//			switchframe(driver, int_NewContPage.otherinfo_iframe, otherinfo);
-//			
-//	}
+	public void fillContactInfo(String name, String category, String state, String access, String otherInfo)
+	{
+		if (name != null)
+			clearText(driver, in_ContactsPage.name_textbox);
+			enter(driver, in_ContactsPage.name_textbox, name);
+		if (category != null){
+			selectitems(driver, in_ContactsPage.category_dropdown, category);
+		}
+		if (state != null){
+			selectitems(driver, in_ContactsPage.state_dropdown, state);
+		}			
+		if (access != null){
+			selectitems(driver, in_ContactsPage.access_dropdown, access);
+		}
+		if (otherInfo != null)
+			switchToFrame(driver, in_ContactsPage.otherinfo_iframe);
+			driver.findElement(By.xpath(in_ContactsPage.frame_textbox)).clear();
+			enter(driver, in_ContactsPage.frame_textbox, otherInfo);
+			switchBackDefaultframe(driver);
+	}
 
 }

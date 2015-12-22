@@ -212,7 +212,7 @@ public class AutoElements extends commons.Initialize {
 	  * @author: Giang Nguyen
 	  * @edit by: 
 	  */
-	 public String getitemPublishStatus(WebDriver driver, String control, String title)
+	 public String getitemStatus(WebDriver driver, String control, String title)
 	 {
 		 element = driver.findElement(By.xpath(String.format(control, title)));
 		 return element.getAttribute("class");
